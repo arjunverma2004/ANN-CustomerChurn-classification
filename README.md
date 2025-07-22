@@ -35,15 +35,27 @@ ANN-CustomerChurn-classification/
 
 ---
 
-## 📊 Dataset
+### 📊 Dataset
 
-- The dataset is sourced from [Telco Customer Churn dataset](https://www.kaggle.com/blastchar/telco-customer-churn) and contains customer information such as:
-  - Gender
-  - SeniorCitizen
-  - Tenure
-  - MonthlyCharges
-  - Contract type
-  - Internet service, etc.
+The dataset is sourced from the [**Bank Customer Churn Dataset**](https://www.kaggle.com/datasets/gauravtopre/bank-customer-churn-dataset), which contains information about customers of a bank and whether they have churned (i.e., closed their account).
+
+It includes features such as:
+
+- **CustomerId** – Unique ID for each customer  
+- **Surname** – Customer’s last name  
+- **CreditScore** – Credit score of the customer  
+- **Geography** – Country of residence  
+- **Gender** – Male or Female  
+- **Age** – Customer’s age  
+- **Tenure** – Number of years as a customer  
+- **Balance** – Account balance  
+- **NumOfProducts** – Number of bank products held  
+- **HasCrCard** – Whether the customer has a credit card (1 = Yes, 0 = No)  
+- **IsActiveMember** – Whether the customer is an active member  
+- **EstimatedSalary** – Estimated annual salary  
+- **Exited** – **Target variable** indicating churn (1 = Yes, 0 = No)
+
+This dataset is suitable for building classification models to predict whether a customer will leave the bank.
 
 - Target: `Churn` (Yes/No)
 
