@@ -91,7 +91,7 @@ if st.button("Predict"):
         # Output
         if prediction_proba > 0.5:
             st.subheader(f"🧠 Prediction Result: {prediction_proba:,.2f}")
-            st.warning('The customer is likely to churn.')
+            st.error('The customer is likely to churn.')
             
         else:
             st.subheader(f"🧠 Prediction Result: {prediction_proba:,.2f}")
