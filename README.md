@@ -20,15 +20,15 @@ ANN-CustomerChurn-classification/
 
 │
 
-├── app.py #Streamlit app frontend
+├── app.py     #Streamlit app frontend
 
-├── model/ #Saved model (.h5 file)
+├── model/     #Saved model (.h5 file)
 
-├── dataset/ # Original customer churn dataset
+├── dataset/ #Original customer churn dataset
 
-├── requirements.txt # Python dependencies
+├── requirements.txt #Python dependencies
 
-├── runtime.txt # Python version for deployment
+├── runtime.txt #Python version for deployment
 
 ├── README.md #Project documentation (you're reading it!)
 
