@@ -8,7 +8,7 @@ The model is deployed as an interactive web app using **Streamlit**. You can try
 
 ## 🚀 Demo
 
-![App Screenshot](https://github.com/arjunverma2004/ANN-CustomerChurn-classification/blob/main/screenshots/Screenshot 2025-07-22 140620.png)
+![App Screenshot](https://github.com/arjunverma2004/ANN-CustomerChurn-classification/blob/main/screenshots/Screenshot.png)
 
 > Predict whether a customer will churn or not using a trained neural network.
 
