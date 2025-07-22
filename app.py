@@ -26,26 +26,34 @@ st.title('Customer Churn PRediction')
 cols = st.columns(2)
 
 # User input
-with cols[0].container(height=100):
+with cols[0].container(height=110):
     geography = st.selectbox('Geography', onehot_encoder_geo.categories_[0])
-with cols[1].container(height=100):
+with cols[1].container(height=110):
     gender = st.selectbox('Gender', label_encoder_gender.classes_)
-with cols[0].container(height=100):
+with cols[0].container(height=110):
     age = st.slider('Age', 18, 92)
-with cols[1].container(height=100):
+with cols[1].container(height=110):
     balance = st.number_input('Balance')
-with cols[0].container(height=100):
+with cols[0].container(height=110):
     credit_score = st.number_input('Credit Score')
-with cols[1].container(height=100):
+with cols[1].container(height=110):
     estimated_salary = st.number_input('Estimated Salary')
-with cols[0].container(height=100):
+with cols[0].container(height=110):
     tenure = st.slider('Tenure', 0, 10)
-with cols[1].container(height=100):
+with cols[1].container(height=110):
     num_of_products = st.slider('Number of Products', 1, 4)
-with cols[0].container(height=100):
-    has_cr_card = st.selectbox('Has Credit Card', [0, 1])
-with cols[1].container(height=100):
-    is_active_member = st.selectbox('Is Active Member', [0, 1])
+with cols[0].container(height=110):
+    has_cr_card = st.selectbox('Has Credit Card', ['Yes', 'No'])
+    if has_cr_card=='Yes':
+        has_cr_card_val=1
+    else:
+        has_cr_card_val=0
+with cols[1].container(height=110):
+    is_active_member = st.selectbox('Is Active Member', ['Yes', 'No'])
+    if is_active_member=='Yes':
+        is_active_member_val=1
+    else:
+        is_active_member_val=0
 
 # Prepare the input data
 input_data = pd.DataFrame({
@@ -55,8 +63,8 @@ input_data = pd.DataFrame({
     'Tenure': [tenure],
     'Balance': [balance],
     'NumOfProducts': [num_of_products],
-    'HasCrCard': [has_cr_card],
-    'IsActiveMember': [is_active_member],
+    'HasCrCard': [has_cr_card_val],
+    'IsActiveMember': [is_active_member_val],
     'EstimatedSalary': [estimated_salary]
 })
 
@@ -85,11 +93,12 @@ if st.button("Predict"):
         
         # Output
         if prediction_proba > 0.5:
+            st.subheader(f"🧠 Prediction Result: {prediction_proba:,.2f}")
             st.warning('The customer is likely to churn.')
-            st.subheader(f"🧠 Prediction Result: {prediction_proba:,.2f}")
+            
         else:
-            st.success('The customer is not likely to churn.')
             st.subheader(f"🧠 Prediction Result: {prediction_proba:,.2f}")
+            st.success('The customer is not likely to churn.')
         
 
     except Exception as e:
