@@ -6,16 +6,16 @@ import pandas as pd
 import pickle
 
 # Load the trained model
-model = tf.keras.models.load_model('model.h5')
+model = tf.keras.models.load_model('models/model.h5')
 
 # Load the encoders and scaler
-with open('label_encoder_gender.pkl', 'rb') as file:
+with open('models/label_encoder_gender.pkl', 'rb') as file:
     label_encoder_gender = pickle.load(file)
 
-with open('onehot_encoder_geo.pkl', 'rb') as file:
+with open('models/onehot_encoder_geo.pkl', 'rb') as file:
     onehot_encoder_geo = pickle.load(file)
 
-with open('scaler.pkl', 'rb') as file:
+with open('models/scaler.pkl', 'rb') as file:
     scaler = pickle.load(file)
 
 
@@ -76,7 +76,7 @@ input_data_scaled = scaler.transform(input_data)
 
 
 
-if st.button("Predict Price"):
+if st.button("Predict"):
     try:
         # Predict churn
         prediction = model.predict(input_data_scaled)
